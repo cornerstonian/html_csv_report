@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
     <title><%= title %></title>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -27,6 +28,7 @@
 
   </head>
   <body>
+    <section class="aboutus">
     <h1>Futurama Cargo Transportation Data</h1>
     <h1>Total Money Made This Week: <%= new_money.reduce(:+) %></h1>
     <table>
@@ -43,22 +45,18 @@
     </tr>
   <% end %>
     </table>
-
+  </section>
     <div id="piechart" style="width: 900px; height: 500px;"></div>
 
 
     <ul class="pilots">
-      <li><%="#{pilots[0]} took #{fry.count} trips and made #{fry_trips.reduce(:+).to_i}"%></li>
-      <li><%="#{pilots[1]} took #{amy.count} trips and made #{amy_trips.reduce(:+).to_i}" %></li>
-      <li><%="#{pilots[2]} took #{bender.count} trips and made #{bender_trips.reduce(:+).to_i}"%></li>
-      <li><%="#{pilots[3]} took #{leela.count} trips and made #{leela_trips.reduce(:+).to_i}"%></li>
+      <li><%="#{pilots[0]} took #{fry.count} trips and made $#{fry_trips.reduce(:+).to_i}"%></li>
+      <li><%="#{pilots[1]} took #{amy.count} trips and made $#{amy_trips.reduce(:+).to_i}" %></li>
+      <li><%="#{pilots[2]} took #{bender.count} trips and made $#{bender_trips.reduce(:+).to_i}"%></li>
+      <li><%="#{pilots[3]} took #{leela.count} trips and made $#{leela_trips.reduce(:+).to_i}"%></li>
     </ul>
 
     <div class="">
      <img src="img/futurama.gif" alt="Futurama Gif" />
-    </div>
-
-
-
   </body>
 </html>
