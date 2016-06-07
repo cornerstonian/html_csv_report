@@ -1,4 +1,10 @@
-table {
+.wraper {
+    width: 800px;
+    margin: 0 auto;
+
+}
+
+table, th, td {
   border: solid 5px teal;
-  width: 100px
+  width: 840px;
 }

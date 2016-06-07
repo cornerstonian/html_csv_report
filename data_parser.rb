@@ -2,8 +2,7 @@
 # How many trips did each employee pilot
 require 'csv'
 require 'erb'
-
-
+require 'pry'
 
 
 pilots = ["Fry", "Amy", "Bender", "Leela"]
@@ -12,7 +11,7 @@ fry = []
 amy = []
 bender = []
 leela = []
-title = "Voyage Data"
+title = "Shipment Data"
 new_money = []
 
 
@@ -45,28 +44,26 @@ CSV.foreach("planet_express_logs.csv", headers: true) do |row|
 
 end
 
-
 #data for the pie chart of the money each employee delivered
 fry_money = fry.collect do |trip|
-          trip["Crates"].to_i
+          trip["Money"].to_i
 end
 
  amy_money = amy.collect do |trip|
-           trip["Crates"].to_i
+           trip["Money"].to_i
 end
 
 bender_money = bender.collect do |trip|
-            trip["Crates"].to_i
+            trip["Money"].to_i
 end
 
 leela_money = leela.collect do |trip|
-             trip["Crates"].to_i
+             trip["Money"].to_i
 end
 
 
 
-
-# List of all employees and their number of trips and bonus
+# List of all employees and their number of trips and bonuses
 fry_trips = fry.collect do |trip|
           trip["Money"].to_i * 0.10
 end

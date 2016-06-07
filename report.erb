@@ -12,7 +12,7 @@
          google.charts.setOnLoadCallback(drawChart);
          function drawChart() {
            var data = google.visualization.arrayToDataTable([
-             ['Fry', 'Hours per Day'],
+             ['Pilot', 'Total'],
              ['Fry\'s Deliveries' ,     <%= fry_money.reduce(:+) %>],
              ['Amy\'s Deliveries',      <%= amy_money.reduce(:+) %>],
              ['Bender\'s Deliveries',  <%= bender_money.reduce(:+) %>],
@@ -28,25 +28,28 @@
 
   </head>
   <body>
-    <section class="aboutus">
+
     <h1>Futurama Cargo Transportation Data</h1>
-    <h1>Total Money Made This Week: <%= new_money.reduce(:+) %></h1>
+    <h1>Total Money Made This Week: $<%= new_money.reduce(:+) %></h1>
+
+
     <table>
       <tr>
         <% @csv_table.headers.each do |header| %>
           <th><%= header %></th>
         <% end %>
+      </tr>
 
-    <% @csv_table.each do |row| %>
-    <tr>
-    <% row.each do |key, value| %>
-      <td><%= value %></td>
-    <% end %>
-    </tr>
-  <% end %>
+        <% @csv_table.each do |row| %>
+         <tr>
+        <% row.each do |key, value| %>
+          <td><%= value %></td>
+        <% end %>
+        </tr>
+        <% end %>
     </table>
-  </section>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
 
 
     <ul class="pilots">
@@ -58,5 +61,6 @@
 
     <div class="">
      <img src="img/futurama.gif" alt="Futurama Gif" />
+
   </body>
 </html>
